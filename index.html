@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Iron Range Tranquility</title>
+  <link href="https://fonts.googleapis.com/css2?family=Ephesis&family=Lora:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    /* Gold Gradient Variables */
+    :root {
+      --gold-gradient: linear-gradient(90deg, #fce89b, #fff8d6, #fce89b);
+      --luxury-gold: #d4af37;
+      --rich-gold: linear-gradient(135deg, #d4af37, #ffd700, #b8860b);
+      --dark-overlay: rgba(0, 0, 0, 0.6);
+    }
+
+    body {
+      font-family: 'Lora', serif;
+      font-size: 1.15rem;
+      line-height: 1.6;
+      margin: 0;
+      padding: 0;
+      background-color: #000;
+      color: white;
+    }
+
+    /* Global Headings */
+    h1, h2 {
+      font-family: 'Ephesis', cursive;
+    }
+
+    h2 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      text-align: center;
+      margin: 2rem auto;
+      display: block;
+      width: fit-content;
+      padding: 0 20px;
+      overflow: visible;
+      white-space: nowrap;
+      box-sizing: content-box;
+    }
+
+    /* Strong tags with same gold gradient as headings */
+    strong, .wifi-label, .transport-box p strong, #house-rules strong, #local-attractions li strong, #food-drink li strong, #checkin-info strong {
+      font-weight: 700;
+      font-family: 'Lora', serif;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Hero Section */
+    .hero {
+      background-image: url('HOUSE 2 pic.jpg');
+      background-size: cover;
+      background-position: center;
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+      color: white;
+      margin: 5rem auto 3rem auto;
+      max-width: 850px;
+      padding: 2rem;
+      margin-bottom: 120px;
+      border-radius: 12px;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.15);
+      z-index: 1;
+      border-radius: 12px;
+    }
+
+    .hero-text {
+      position: relative;
+      z-index: 2;
+      padding: 1rem 2rem;
+      max-width: 90%;
+    }
+
+    .hero h1 {
+      font-size: 4rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.5);
+    }
+
+    .hero p {
+      font-size: 1.5rem;
+      color: white;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3);
+    }
+
+    /* Guest Welcome Styling - With Animation */
+    .guest-welcome {
+      font-family: 'Playfair Display', serif !important;
+      font-style: italic !important;
+      font-weight: 400 !important;
+      font-size: 1.8rem !important;
+      color: white;
+      text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      letter-spacing: 0.5px;
+      animation: fadeInGlow 2s ease-in-out;
+    }
+
+    @keyframes fadeInGlow {
+      0% {
+        opacity: 0;
+        transform: translateY(10px);
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+        text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.7), 0 0 20px rgba(255, 255, 255, 0.3);
+      }
+    }
+
+    /* Section Styling */
+    section {
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 5rem 2.5rem;
+      text-align: center;
+      border-radius: 12px;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+      position: relative;
+    }
+
+    section::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.4);
+      border-radius: 12px;
+      z-index: 1;
+    }
+
+    section > * {
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Individual Section Backgrounds */
+    #checkin-info {
+      background-image: url('front door pic.jpg');
+    }
+
+    #parking-info {
+      background-image: url('driveway.jpg');
+    }
+
+    /* ⭐ IMPORTANT: Property Maintenance - Change seasonally ⭐ */
+    #property-maintenance {
+      /* SUMMER: Use lawnmower.jpg (April - October) */
+      background-image: url('lawnmower.jpg');
+      
+      /* WINTER: Use shovels.jpg (November - March) */
+      /* background-image: url('shovels.jpg'); */
+    }
+
+    #wifi {
+      background-image: url('wifi image pic.jpg');
+    }
+
+    #house-rules {
+      background-image: url('Porch - House Rules pic.jpg');
+    }
+
+    #special-events {
+      background-image: url('local events pic.jpg');
+    }
+
+    #local-attractions {
+      background-image: url('local events pic.jpg');
+    }
+
+    #food-drink {
+      background-image: url('restaurants pic.jpg');
+    }
+
+    #host {
+      background-image: none;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    /* Section Dividers - Ultra Luxurious */
+    .section-divider {
+      border: none;
+      height: 1px;
+      background: linear-gradient(90deg, 
+        transparent, 
+        rgba(212, 175, 55, 0.3) 10%,
+        var(--gold-gradient) 25%, 
+        #fff8d6 50%, 
+        var(--gold-gradient) 75%,
+        rgba(212, 175, 55, 0.3) 90%, 
+        transparent);
+      margin: 6rem auto;
+      max-width: 800px;
+      border-radius: 2px;
+      position: relative;
+      box-shadow: 
+        0 0 20px rgba(251, 191, 36, 0.4),
+        0 2px 8px rgba(0, 0, 0, 0.3);
+    }
+
+    .section-divider::before {
+      content: '';
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 30px;
+      height: 30px;
+      background: radial-gradient(circle, var(--gold-gradient));
+      border-radius: 50%;
+      box-shadow: 
+        0 0 20px rgba(251, 191, 36, 0.6),
+        inset 0 2px 4px rgba(255, 255, 255, 0.3);
+    }
+
+    .section-divider::after {
+      content: '◆';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: #000;
+      background: transparent;
+      font-size: 16px;
+      text-shadow: 0 0 8px rgba(251, 191, 36, 0.8);
+      z-index: 2;
+    }
+
+    /* WiFi Information */
+    .wifi-value {
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: white;
+      padding: 0;
+      border-radius: 0;
+      display: inline-block;
+      margin: 0.3rem;
+      border: none;
+      backdrop-filter: none;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      box-shadow: none;
+    }
+
+    /* Lists */
+    .icon-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .icon-list li {
+      margin: 1rem 0;
+      padding: 0.8rem 1.2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 8px;
+      border-left: 4px solid var(--luxury-gold);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .icon-list li:hover {
+      background: rgba(255, 255, 255, 0.15);
+      transform: translateX(5px);
+    }
+
+    /* Gentle Note */
+    .gentle-note {
+      text-align: center;
+      font-size: 1.3rem;
+      margin-top: 2rem;
+      padding: 1rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      border: 1px solid var(--luxury-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Flex Layout */
+    .flex-row {
+      display: flex;
+      gap: 2rem;
+      align-items: flex-start;
+    }
+
+    .attractions-list {
+      flex: 2;
+    }
+
+    .transport-box {
+      flex: 1;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid var(--luxury-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    .transport-box h3 {
+      font-family: 'Lora', serif;
+      font-size: 2rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      margin-top: 0;
+      text-align: center;
+    }
+
+    /* Host Section - UPDATED */
+    .host-content {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 1.5rem;
+    }
+
+    .host-photo {
+      width: 200px;
+      height: auto;
+      border-radius: 12px;
+      border: 4px solid var(--luxury-gold);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .superhost-badge {
+      width: 80px;
+      height: 80px;
+      margin-top: -10px;
+      margin-bottom: 10px;
+      object-fit: contain;
+    }
+
+    .host-content p {
+      max-width: 600px;
+      font-size: 0.95rem;
+      line-height: 1.6;
+      color: #fce89b;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      font-style: italic !important;
+      font-family: 'Lora', serif;
+    }
+
+    /* Food & Drink Specific */
+    #food-drink li strong, #food-drink h2 {
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.7);
+      font-weight: 700;
+    }
+
+    #food-drink p, #food-drink li {
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+      font-size: 1.2rem;
+      line-height: 1.75;
+    }
+
+    #food-drink h2 {
+      font-size: 3.5rem;
+      padding: 0 20px;
+      border-radius: 0;
+      margin-bottom: 2rem;
+      text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.8), 0 0 20px rgba(0, 0, 0, 0.6);
+      overflow: visible;
+      white-space: nowrap;
+      box-sizing: content-box;
+    }
+
+    /* Keycode and Lock Instructions Styling */
+    .keycode-info {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border-left: 4px solid var(--luxury-gold) !important;
+      border: 1px solid var(--luxury-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    .keycode {
+      font-size: 1.3rem;
+      font-weight: 600;
+      color: white;
+      background: transparent;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0;
+      border: none;
+      border-bottom: 2px solid white;
+      letter-spacing: 3px;
+      text-shadow: none;
+      display: inline-block;
+      margin-left: 0.5rem;
+      font-family: 'Lora', serif;
+      transition: all 0.3s ease;
+    }
+
+    .keycode:hover {
+      border-bottom-color: #f0f0f0;
+      color: #f0f0f0;
+    }
+
+    .lock-instructions {
+      background: rgba(255, 255, 255, 0.1) !important;
+      border-left: 4px solid var(--luxury-gold) !important;
+      border: 1px solid var(--luxury-gold);
+      padding: 1.5rem 2rem !important;
+      backdrop-filter: blur(10px);
+    }
+
+    .lock-instructions ol {
+      margin: 0.8rem 0 1.2rem 1.5rem;
+      padding: 0;
+    }
+
+    .lock-instructions ol li {
+      margin: 0.5rem 0;
+      padding: 0.3rem 0;
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      transform: none !important;
+      box-shadow: none !important;
+      color: #f8f8f8;
+      font-size: 1rem;
+    }
+
+    .lock-instructions ol li:hover {
+      transform: none !important;
+      background: transparent !important;
+    }
+
+    /* Local Events During Stay Styling */
+    .local-events-during-stay {
+      margin-top: 3rem;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      border: 1px solid var(--luxury-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    .local-events-during-stay h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.8rem;
+      background: var(--gold-gradient);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+      margin-top: 0;
+      margin-bottom: 1.5rem;
+      text-align: center;
+    }
+
+    .events-list {
+      list-style: none;
+      padding: 0;
+      text-align: left;
+    }
+
+    .events-list li {
+      margin: 1rem 0;
+      padding: 0.8rem 1.2rem;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 8px;
+      border-left: 4px solid var(--luxury-gold);
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+    }
+
+    .events-list li:hover {
+      background: rgba(255, 255, 255, 0.1);
+      transform: translateX(5px);
+    }
+
+    .events-info {
+      font-size: 0.9rem;
+      color: #cbd5e0;
+      font-style: italic;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    .events-info a {
+      color: #000;
+    }
+
+    .events-info a:hover {
+      color: #333;
+      border-bottom-color: #333;
+    }
+
+    /* Local attractions link styling */
+    #local-attractions a {
+      color: #000;
+    }
+
+    #local-attractions a:hover {
+      color: #333;
+      border-bottom-color: #333;
+    }
+
+    /* Food & Drink link styling */
+    #food-drink a {
+      color: #000;
+    }
+
+    #food-drink a:hover {
+      color: #333;
+      border-bottom-color: #333;
+    }
+
+    /* Property Address Styling */
+    .address-info {
+      background: rgba(255, 255, 255, 0.15) !important;
+      border-left: 4px solid var(--luxury-gold) !important;
+      border: 1px solid var(--luxury-gold);
+      backdrop-filter: blur(10px);
+    }
+
+    /* Links */
+    a {
+      color: #fbbf24;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s ease, color 0.3s ease;
+    }
+
+    a:hover {
+      color: #f59e0b;
+      border-bottom-color: #f59e0b;
+    }
+
+    .fine-print {
+      font-size: 0.9rem;
+      color: #cbd5e0;
+      font-style: italic;
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+
+    /* Site Note */
+    .site-note {
+      max-width: 800px;
+      margin: 4rem auto;
+      padding: 2rem;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 16px;
+      border: 1px solid var(--luxury-gold);
+      text-align: center;
+      font-size: 0.9rem;
+      line-height: 1.6;
+      backdrop-filter: blur(10px);
+    }
+
+    /* Footer */
+    .site-footer {
+      text-align: center;
+      padding: 2rem;
+      margin-top: 4rem;
+      background: linear-gradient(135deg, rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.6));
+      color: #cbd5e0;
+      font-size: 0.95rem;
+    }
+
+    /* Responsive Design - Enhanced Mobile */
+    @media (max-width: 1024px) {
+      section {
+        margin: 4rem auto;
+        padding: 3rem 2rem;
+      }
+      
+      .flex-row {
+        flex-direction: column;
+        gap: 2rem;
+      }
+      
+      .transport-box {
+        margin-top: 1rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      body {
+        font-size: 1rem;
+        line-height: 1.5;
+      }
+      
+      .hero {
+        height: 80vh;
+        margin: 1rem auto 2rem auto;
+        padding: 1.5rem;
+      }
+      
+      .hero h1 {
+        font-size: 3.5rem;
+        margin-bottom: 1rem;
+      }
+      
+      .hero p {
+        font-size: 1.4rem;
+      }
+      
+      h2 {
+        font-size: 2.8rem;
+        margin: 2rem auto 1.5rem;
+      }
+      
+      section {
+        margin: 3rem auto;
+        padding: 2.5rem 1.5rem;
+        max-width: 95%;
+      }
+      
+      .icon-list li {
+        padding: 1.2rem 1.5rem;
+        margin: 1.2rem 0;
+        font-size: 1rem;
+      }
+      
+      .wifi-value {
+        font-size: 1.3rem;
+        padding: 0.8rem 1.5rem;
+        margin: 0.8rem 0.5rem;
+        display: block;
+        width: fit-content;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      .wifi-label {
+        font-size: 1.2rem;
+        text-align: center;
+        display: block;
+        margin-bottom: 0.5rem;
+      }
+      
+      .keycode {
+        font-size: 1.2rem;
+        padding: 0.4rem 0.8rem;
+        display: block;
+        margin: 0.5rem auto 0 auto;
+        text-align: center;
+        width: fit-content;
+      }
+      
+      .transport-box {
+        padding: 2rem 1.5rem;
+      }
+      
+      .host-photo {
+        width: 180px;
+        height: auto;
+      }
+      
+      .superhost-badge {
+        width: 70px;
+        height: 70px;
+      }
+      
+      .host-content p {
+        font-size: 0.9rem;
+        padding: 0 1rem;
+      }
+      
+      .site-note {
+        margin: 3rem auto;
+        padding: 2rem 1.5rem;
+        max-width: 95%;
+        font-size: 0.85rem;
+      }
+      
+      .section-divider {
+        margin: 4rem auto;
+        max-width: 90%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero {
+        height: 70vh;
+        margin: 0.5rem;
+        padding: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2.8rem;
+        line-height: 1.1;
+      }
+      
+      .hero p {
+        font-size: 1.2rem;
+      }
+      
+      h2 {
+        font-size: 2.2rem;
+        margin: 1.5rem auto 1rem;
+      }
+      
+      section {
+        margin: 2rem 0.5rem;
+        padding: 2rem 1rem;
+        max-width: calc(100% - 1rem);
+      }
+      
+      .icon-list li {
+        padding: 1rem;
+        margin: 1rem 0;
+        font-size: 0.95rem;
+        border-left-width: 3px;
+      }
+      
+      .icon-list li:hover {
+        transform: translateX(3px);
+      }
+      
+      .wifi-value {
+        font-size: 1.1rem;
+        padding: 0.6rem 1rem;
+        margin: 0.5rem 0;
+      }
+      
+      .keycode {
+        font-size: 1.1rem;
+        padding: 0.4rem 0.6rem;
+        letter-spacing: 1px;
+      }
+      
+      .gentle-note {
+        font-size: 1.1rem;
+        padding: 1.5rem 1rem;
+      }
+      
+      .transport-box {
+        padding: 1.5rem 1rem;
+      }
+      
+      .transport-box h3 {
+        font-size: 1.8rem;
+      }
+      
+      .transport-box p {
+        font-size: 0.95rem;
+        padding: 0.8rem;
+      }
+      
+      .host-photo {
+        width: 160px;
+        height: auto;
+      }
+      
+      .superhost-badge {
+        width: 60px;
+        height: 60px;
+      }
+      
+      .host-content p {
+        font-size: 0.85rem;
+        line-height: 1.5;
+      }
+      
+      .site-note {
+        margin: 2rem 0.5rem;
+        padding: 1.5rem 1rem;
+        font-size: 0.8rem;
+        line-height: 1.5;
+      }
+      
+      .site-footer {
+        padding: 2rem 1rem;
+        font-size: 0.9rem;
+      }
+      
+      .section-divider {
+        margin: 3rem auto;
+        max-width: 95%;
+      }
+      
+      .section-divider::before {
+        width: 25px;
+        height: 25px;
+        top: -12px;
+      }
+      
+      .section-divider::after {
+        font-size: 14px;
+        top: -10px;
+      }
+    }
+
+    /* Touch-friendly improvements */
+    @media (max-width: 768px) {
+      .icon-list li {
+        cursor: pointer;
+        -webkit-tap-highlight-color: rgba(251, 191, 36, 0.3);
+      }
+      
+      a {
+        padding: 0.2rem 0;
+        -webkit-tap-highlight-color: rgba(251, 191, 36, 0.3);
+      }
+      
+      /* Ensure text is readable on mobile */
+      body {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+      }
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="hero-container">
+      <div class="hero-text">
+        <h1>Welcome to Iron Range Tranquility</h1>
+        <!-- ⭐ IMPORTANT: CHANGE THIS GUEST NAME FOR EACH BOOKING ⭐ -->
+        <p class="guest-welcome">Hossein and friends!</p>
+        <!-- ⭐ END GUEST NAME SECTION ⭐ -->
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="checkin-info" class="checkin-background">
+    <h2>Check-In / Check-Out Info</h2>
+    
+    <!-- CHANGE THIS ADDRESS FOR YOUR PROPERTY -->
+    <ul class="icon-list">
+      <li class="address-info"><strong>Property Address:</strong> 216 1st St SW, Chisholm, MN 55719</li>
+    </ul>
+    <!-- END ADDRESS SECTION -->
+    
+    <ul class="icon-list">
+      <li><strong>Check-In:</strong> After 3:00 PM<br>
+      <small style="font-size: 0.85rem; color: #cbd5e0; font-style: italic;">*Looking for an early/late check-in/check-out? Please ask in advance and I'll do my best to accommodate</small></li>
+      <li><strong>Check-Out:</strong> By 11:00 AM</li>
+      <li><strong>Self Check-In:</strong> Use the smart lock code or keys located in manual lockbox on front porch post</li>
+      
+      <!-- ⭐ IMPORTANT: CHANGE THESE KEYCODES FOR EACH GUEST ⭐ -->
+      <li class="keycode-info"><strong>Your Door Keycode / Lockbox Code:</strong> <span class="keycode">1234</span><br>
+      <strong>Important:</strong> The door must be pulled shut <em>while entering the code</em> to unlock and <em>while pressing the lock button</em> to lock. To unlock, wait for the green light before opening. To lock, wait for the red light and for the deadbolt to fully engage.</li>
+      <!-- ⭐ END KEYCODE SECTION ⭐ -->
+      
+      <li class="lock-instructions">
+        <strong>Having trouble with the smart lock?</strong><br>
+        A manual key lockbox is located on the front porch post. The code is the same as the door code. Inside, you'll find a set of keys for use during your stay. <strong>Please leave the keys inside the home at checkout.</strong>
+      </li>
+      
+      <li class="welcome-amenities">
+        <strong>Welcome & Amenities:</strong><br>
+        Please enjoy the goodies I've left for you in the welcome basket, along with the beverages in the fridge.
+        <ul style="margin: 0.5rem 0 0 1rem; padding: 0; list-style: disc;">
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">Extra linens can be found in the upstairs primary bedroom closet.</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">A <strong>Coleman portable cot</strong> and an additional <strong>box fan</strong> are located in the office closet.</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">A <strong>space heater</strong> is available in the office closet too, if you need extra warmth.</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">Throw blankets can be found in the living room and on each bed.</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">A <strong>washer and dryer</strong> are available for use, with detergent and dryer sheets provided.</li>
+        </ul>
+        I'm delighted to host you and genuinely hope you have a wonderful stay! If you have any questions or concerns, please don't hesitate to contact me through the Airbnb app.
+      </li>
+      
+      <li class="checkout-instructions">
+        <strong>Checkout Instructions:</strong>
+        <ul style="margin: 0.5rem 0 0 1rem; padding: 0; list-style: none;">
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Checkout time is 11 AM</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Turn off all the lights</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Make sure all the windows are shut</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Place all dirty towels in the washer (no need to start washer)</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Place all bagged trash in trash container by garage</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Close and lock front and side door behind you</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ If lockbox keys were used, return keys to lockbox</li>
+          <li style="margin: 0.3rem 0; padding: 0; background: none; border: none; transform: none; backdrop-filter: none;">✓ Enjoy your journey home, we look forward to seeing you again!</li>
+        </ul>
+      </li>
+    </ul>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="parking-info" class="parking-background">
+    <h2>Parking Information</h2>
+    <p><strong>Driveway parking is available</strong> in the small driveway in front of the attached garage.</p>
+    <p><strong>Street parking alternative:</strong> Calendar parking is in effect year-round. Park on the same side of the street as the house (216) on even-numbered dates and move to the opposite side at 6 PM. On odd-numbered dates, park on the opposite side and move back at 6 PM.</p>
+    <p>Vehicles may be ticketed or towed if parked incorrectly or if blocking emergency or city maintenance vehicles. No posted signs indicate this rule, so please follow the schedule to avoid fines. If you have any questions, just ask!</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="property-maintenance" class="maintenance-background">
+    <h2>Property Maintenance</h2>
+    <p><strong>Summer:</strong> During your stay, someone may come to mow and trim the lawn. They won't bother you or interrupt your stay.</p>
+    <p><strong>Winter:</strong> During your stay, someone may come to shovel the driveway and sidewalks and salt the porches and walkways.</p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="wifi" class="wifi-background">
+    <h2>Wi-Fi Information</h2>
+    <div><span class="wifi-label">Wi-Fi Network:</span> <span class="wifi-value">216 Guest</span></div>
+    <div><span class="wifi-label">Password:</span> <span class="wifi-value">therewego</span></div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="house-rules" class="rules-background">
+    <h2>House Rules</h2>
+    <ul class="icon-list">
+      <li><strong>No unregistered guests (max 8 total guests)</strong></li>
+      <li><strong>No pets</strong> - our cleaning team has allergies; a $400 fee applies if animals are brought on site</li>
+      <li><strong>No smoking or vaping indoors</strong> - $500 fee if smoking is detected (deep cleaning required)</li>
+      <li><strong>No parties or large gatherings</strong></li>
+      <li><strong>Quiet hours:</strong> 10 PM - 9 AM</li>
+      <li><strong>Do not tamper with Wi-Fi or security devices</strong> - this is grounds for cancellation</li>
+      <li><strong>Return any moved furniture to original position before checkout</strong></li>
+      <li><strong>No commercial photography or videography</strong></li>
+    </ul>
+
+    <p class="gentle-note"><strong><em>Please be kind to the space, the neighbors and yourself.</em></strong></p>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="special-events" class="special-events-background">
+    <h2>Special Events During Your Stay</h2>
+    
+    <!-- ⭐ IMPORTANT: CHANGE THIS SECTION FOR EACH GUEST ⭐ -->
+    <ul class="events-list">
+      <li><strong>[DATE]:</strong> [EVENT NAME] - [LOCATION/TIME]</li>
+      <li><strong>[DATE]:</strong> [EVENT NAME] - [LOCATION/TIME]</li>
+      <li><strong>[DATE]:</strong> [EVENT NAME] - [LOCATION/TIME]</li>
+      <li><strong>[DATE]:</strong> [EVENT NAME] - [LOCATION/TIME]</li>
+      <li><strong>[DATE]:</strong> [EVENT NAME] - [LOCATION/TIME]</li>
+    </ul>
+    <p class="events-info">*For more info go to: <a href="https://ironrange.org/iron-range-mn-events/" target="_blank">https://ironrange.org/iron-range-mn-events/</a></p>
+    <!-- ⭐ END EVENTS SECTION ⭐ -->
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="local-attractions" class="local-events-background">
+    <h2>Local Things to Do</h2>
+    
+    <div class="flex-row">
+      <div class="attractions-list">
+        <ul class="icon-list">
+          <li><strong>Redhead Mountain Bike Park:</strong> World-class system with nearly 25 miles of trails</li>
+          <li><strong>Snowmobiling:</strong> Best in Northern MN on the Mesabi Iron Range*</li>
+          <li><strong>Horseback Riding</strong></li>
+          <li><strong>ATV / OHV Trails</strong></li>
+          <li><strong>Hunting & Fishing</strong></li>
+          <li><strong>Snowshoeing & Cross-Country Skiing*</strong></li>
+          <li><strong>Canoeing & Kayaking*</strong></li>
+          <li><strong>Mesabi Trail:</strong> 162 miles / 28 towns</li>
+          <li><strong>Curling*</strong></li>
+          <li><strong>Unique Hiking Trails</strong></li>
+          <li><em>More at <a href="https://ironrange.org" target="_blank">ironrange.org</a></em></li>
+        </ul>
+        <p class="fine-print">*Seasonal availability may apply</p>
+      </div>
+      <div class="transport-box">
+        <h3>Public Transportation</h3>
+        <p><strong>Arrowhead Transit</strong><br>1-800-862-0175<br><em>Bus system within Chisholm</em></p>
+        <p><strong>Range Taxi</strong><br>218-966-6699</p>
+        <p><strong>All Taxi</strong><br>218-966-7024</p>
+        <p><strong>Z-Taxi</strong><br>218-929-2222</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="food-drink" class="food-background">
+    <h2>Food & Drink</h2>
+    <p>Chisholm has a plethora of food and drink for everyone. Some of the more famous ones include:</p>
+    <ul class="icon-list">
+      <li><strong>Black Bear Bakery:</strong> 17 West Lake Street - (218) 254-4772</li>
+      <li><strong>Valentini's Supper Club:</strong> 31 West Lake Street - (218) 254-2607</li>
+      <li><strong>Jim's Sports Club Bar & Grill:</strong> 108 West Lake Street - (218) 254-7320</li>
+      <li><strong>Snicker's Pizza & Pub:</strong> 222 West Lake Street - (218) 254-2317</li>
+      <li><strong>Papa Zzz's Pizza:</strong> 11 W Lake St - (218) 254-5777</li>
+      <li><strong>McDonald's:</strong> 710 Iron Miner Memorial Rd - (218) 254-4227</li>
+      <li><strong>Tom & Jerry's Bar:</strong> 201 W Lake St - (218) 254-9980</li>
+      <li><strong>Tommy's Bar:</strong> 109 W Lake St - (218) 254-4367</li>
+      <li><strong>Sidelines Sports Bar:</strong> 217 W Lake St - (218) 254-3926</li>
+      <li><strong>T & T Dom:</strong> 210 W Lake St - (218) 254-8048</li>
+    </ul>
+  </section>
+
+  <hr class="section-divider" />
+
+  <section id="host" class="host-background">
+    <h2>Meet Your Host</h2>
+    <div class="host-content">
+      <img src="host-background pic.jpg" alt="Host Jen" class="host-photo" />
+      <img src="superhost-badge-pic.png" alt="Airbnb Superhost Badge" class="superhost-badge" />
+      <p>Hi, I'm Jen, your host at Iron Range Tranquility. I've poured a lot of love into this space so it feels calm, cozy, and just right for your time away. Thank you very much for choosing to stay with us!</p>
+    </div>
+  </section>
+
+  <p class="site-note">
+    Looking for the full guest manual? You'll find it neatly tucked inside the far-right drawer of the kitchen island.
+    A printed check-out checklist is posted on the fridge to make your departure a breeze.
+    If you've enjoyed your stay, I'd be truly grateful for your 5-star review. Your feedback helps me keep improving and welcoming future guests with the same care.
+  </p>
+
+  <footer class="site-footer">
+    &copy; 2025 Iron Range Tranquility &middot; Designed with love for my guests
+  </footer>
+</body>
+</html>
